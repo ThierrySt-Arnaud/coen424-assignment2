@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "ca.concordia.coen424.id27649460.MapReduceSort",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MapReduceSort",
+            "request": "launch",
+            "mainClass": "ca.concordia.coen424.id27649460.MapReduceSort",
+            "projectName": "assignment-2",
+            "args": "testing mem"
+        }
+    ]
+}

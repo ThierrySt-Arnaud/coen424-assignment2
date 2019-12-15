@@ -1,0 +1,41 @@
+{
+    "name": "FloatOutput",
+    "namespace": "output.avro",
+    "type": "record",
+    "fields": [
+        {
+            "name": "sortedValues",
+            "type": {
+                "type": "array",
+                "items": "double"
+            }
+        },
+        {
+            "name": "scaledValues",
+            "type": {
+                "type": "array",
+                "items": "double"
+            }
+        },
+        {
+            "name": "min",
+            "type": "double"
+        },
+        {
+            "name": "max",
+            "type": "double"
+        },
+        {
+            "name": "median",
+            "type": "double"
+        },
+        {
+            "name": "ninety",
+            "type": "double"
+        },
+        {
+            "name": "stdDev",
+            "type": "double"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "verify",
+            "type": "shell",
+            "command": "mvn -B verify",
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceRoot}/assignment-2"
+            }
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "mvn -B test",
+            "group": "test"
+        },
+        {
+            "label": "exec",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "exec:java",
+                "-q",
+                "-Dexec.mainClass=ca.concordia.coen424.id27649460.MapReduceSort",
+                "-Dexec.args=\"training cpu\""],
+            "group": {
+                "kind":"test",
+                "isDefault": true
+            },
+            "options": {"cwd": "${workspaceRoot}/assignment-2"}
+        }
+    ]
+}

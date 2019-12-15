@@ -1,0 +1,12 @@
+{
+  "name": "Sample",
+  "namespace": "ndbench.avro",
+  "type": "record",
+  "fields": [
+    {"name": "cpu", "type": "int"},
+    {"name": "netin",  "type": "int"},
+    {"name": "netout", "type": "int"},
+    {"name": "mem", "type": "float"},
+    {"name": "tgt", "type": "float"}
+  ]
+}
