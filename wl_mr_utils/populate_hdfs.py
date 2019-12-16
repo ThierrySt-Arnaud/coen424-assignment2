@@ -4,7 +4,6 @@ import hdfs
 from hdfs.ext.avro import AvroWriter
 
 WEBHDFS_URL = "http://localhost:9870"
-USERNAME = "thierry"
 SOURCE_URL = "https://raw.githubusercontent.com/"
 SOURCE_REPO = "haniehalipour/Online-Machine-Learning-for-Cloud-Resource-Provisioning-of-Microservice-Backend-Systems/"
 DATA_DIR = "master/Workload%20Data/"
@@ -17,7 +16,7 @@ COLUMNS = ("cpu", "netin", "netout", "mem", "tgt")
 
 
 def populate_hdfs(path_prefix):
-    hdfs_cli = hdfs.InsecureClient("http://localhost:9870")
+    hdfs_cli = hdfs.InsecureClient(WEBHDFS_URL)
     hdfs_cli.makedirs(OUTPUT_DIR)
 
     with open(f"{path_prefix}/{SCH_DIR}/{SCH_FILE}", "r") as schema_file:

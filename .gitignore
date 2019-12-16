@@ -1,3 +1,4 @@
 *.db
 /batches/
+/Output/*
 *.pyc

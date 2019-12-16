@@ -11,6 +11,8 @@ import org.apache.avro.mapreduce.AvroJob;
 import org.apache.avro.mapreduce.AvroKeyInputFormat;
 import org.apache.avro.mapreduce.AvroKeyOutputFormat;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.mapreduce.Counter;
+import org.apache.hadoop.mapreduce.Counters;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Job;
@@ -18,6 +20,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.CounterGroup;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -157,7 +160,6 @@ public class MapReduceSort{
             Long min = valueList.get(0);
             Long max = valueList.get(count-1);
             IntOutput output = new IntOutput();
-            output.setSortedValues(valueList);
             output.setMin(min);
             output.setMax(max);
             if (count % 2 == 0){
@@ -288,7 +290,6 @@ public class MapReduceSort{
             Double max = valueList.get(count - 1);
 
             FloatOutput output = new FloatOutput();
-            output.setSortedValues(valueList);
             output.setMin(min);
             output.setMax(max);
             if (count % 2 == 0) {
@@ -356,6 +357,7 @@ public class MapReduceSort{
 
         FileInputFormat.setInputPaths(job, new Path(filesystem + "/NDBench/" + remArgs[0]));
         FileOutputFormat.setOutputPath(job, new Path(filesystem + "/Output"));
-        System.exit(job.waitForCompletion(true) ? 0 : 1);
+        int result = job.waitForCompletion(true) ? 0 : 1;
+        System.exit(result);
     }
 }

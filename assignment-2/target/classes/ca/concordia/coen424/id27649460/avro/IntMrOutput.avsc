@@ -4,13 +4,6 @@
     "type": "record",
     "fields": [
         {
-            "name": "sortedValues",
-            "type": {
-                "type": "array",
-                "items": "long"
-            }
-        },
-        {
             "name": "scaledValues",
             "type": {
                 "type": "array",

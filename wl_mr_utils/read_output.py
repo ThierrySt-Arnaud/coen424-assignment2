@@ -13,7 +13,7 @@ def read_output():
 
     with AvroReader(hdfs_cli, f"{OUTPUT_DIR}/{OUTPUT_FILE}") as avro_rdr:
         for record in avro_rdr:
-            print(f"Number of values:\t{len(record['sortedValues'])}")
+            print(f"Number of values:\t{len(record['scaledValues'])}")
             print(f"Minimum:\t\t{record['min']}")
             print(f"Maximum:\t\t{record['max']}")
             print(f"Median:\t\t\t{record['median']}")
