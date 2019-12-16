@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6244215694097617916L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FloatOutput\",\"namespace\":\"output.avro\",\"fields\":[{\"name\":\"scaledValues\",\"type\":{\"type\":\"array\",\"items\":\"double\"}},{\"name\":\"min\",\"type\":\"double\"},{\"name\":\"max\",\"type\":\"double\"},{\"name\":\"median\",\"type\":\"double\"},{\"name\":\"ninety\",\"type\":\"double\"},{\"name\":\"stdDev\",\"type\":\"double\"}]}");
+  private static final long serialVersionUID = -7407507436456307628L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FloatOutput\",\"namespace\":\"output.avro\",\"fields\":[{\"name\":\"min\",\"type\":\"double\"},{\"name\":\"max\",\"type\":\"double\"},{\"name\":\"median\",\"type\":\"double\"},{\"name\":\"ninety\",\"type\":\"double\"},{\"name\":\"stdDev\",\"type\":\"double\"},{\"name\":\"scaledValues\",\"type\":{\"type\":\"array\",\"items\":\"double\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -71,12 +71,12 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
     return DECODER.decode(b);
   }
 
-  @Deprecated public java.util.List<java.lang.Double> scaledValues;
   @Deprecated public double min;
   @Deprecated public double max;
   @Deprecated public double median;
   @Deprecated public double ninety;
   @Deprecated public double stdDev;
+  @Deprecated public java.util.List<java.lang.Double> scaledValues;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -87,20 +87,20 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
 
   /**
    * All-args constructor.
-   * @param scaledValues The new value for scaledValues
    * @param min The new value for min
    * @param max The new value for max
    * @param median The new value for median
    * @param ninety The new value for ninety
    * @param stdDev The new value for stdDev
+   * @param scaledValues The new value for scaledValues
    */
-  public FloatOutput(java.util.List<java.lang.Double> scaledValues, java.lang.Double min, java.lang.Double max, java.lang.Double median, java.lang.Double ninety, java.lang.Double stdDev) {
-    this.scaledValues = scaledValues;
+  public FloatOutput(java.lang.Double min, java.lang.Double max, java.lang.Double median, java.lang.Double ninety, java.lang.Double stdDev, java.util.List<java.lang.Double> scaledValues) {
     this.min = min;
     this.max = max;
     this.median = median;
     this.ninety = ninety;
     this.stdDev = stdDev;
+    this.scaledValues = scaledValues;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -108,12 +108,12 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
   // Used by DatumWriter.  Applications should not call.
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return scaledValues;
-    case 1: return min;
-    case 2: return max;
-    case 3: return median;
-    case 4: return ninety;
-    case 5: return stdDev;
+    case 0: return min;
+    case 1: return max;
+    case 2: return median;
+    case 3: return ninety;
+    case 4: return stdDev;
+    case 5: return scaledValues;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -122,31 +122,14 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: scaledValues = (java.util.List<java.lang.Double>)value$; break;
-    case 1: min = (java.lang.Double)value$; break;
-    case 2: max = (java.lang.Double)value$; break;
-    case 3: median = (java.lang.Double)value$; break;
-    case 4: ninety = (java.lang.Double)value$; break;
-    case 5: stdDev = (java.lang.Double)value$; break;
+    case 0: min = (java.lang.Double)value$; break;
+    case 1: max = (java.lang.Double)value$; break;
+    case 2: median = (java.lang.Double)value$; break;
+    case 3: ninety = (java.lang.Double)value$; break;
+    case 4: stdDev = (java.lang.Double)value$; break;
+    case 5: scaledValues = (java.util.List<java.lang.Double>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
-  }
-
-  /**
-   * Gets the value of the 'scaledValues' field.
-   * @return The value of the 'scaledValues' field.
-   */
-  public java.util.List<java.lang.Double> getScaledValues() {
-    return scaledValues;
-  }
-
-
-  /**
-   * Sets the value of the 'scaledValues' field.
-   * @param value the value to set.
-   */
-  public void setScaledValues(java.util.List<java.lang.Double> value) {
-    this.scaledValues = value;
   }
 
   /**
@@ -235,6 +218,23 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
   }
 
   /**
+   * Gets the value of the 'scaledValues' field.
+   * @return The value of the 'scaledValues' field.
+   */
+  public java.util.List<java.lang.Double> getScaledValues() {
+    return scaledValues;
+  }
+
+
+  /**
+   * Sets the value of the 'scaledValues' field.
+   * @param value the value to set.
+   */
+  public void setScaledValues(java.util.List<java.lang.Double> value) {
+    this.scaledValues = value;
+  }
+
+  /**
    * Creates a new FloatOutput RecordBuilder.
    * @return A new FloatOutput RecordBuilder
    */
@@ -274,12 +274,12 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FloatOutput>
     implements org.apache.avro.data.RecordBuilder<FloatOutput> {
 
-    private java.util.List<java.lang.Double> scaledValues;
     private double min;
     private double max;
     private double median;
     private double ninety;
     private double stdDev;
+    private java.util.List<java.lang.Double> scaledValues;
 
     /** Creates a new Builder */
     private Builder() {
@@ -292,28 +292,28 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
      */
     private Builder(output.avro.FloatOutput.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.scaledValues)) {
-        this.scaledValues = data().deepCopy(fields()[0].schema(), other.scaledValues);
+      if (isValidValue(fields()[0], other.min)) {
+        this.min = data().deepCopy(fields()[0].schema(), other.min);
         fieldSetFlags()[0] = other.fieldSetFlags()[0];
       }
-      if (isValidValue(fields()[1], other.min)) {
-        this.min = data().deepCopy(fields()[1].schema(), other.min);
+      if (isValidValue(fields()[1], other.max)) {
+        this.max = data().deepCopy(fields()[1].schema(), other.max);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.max)) {
-        this.max = data().deepCopy(fields()[2].schema(), other.max);
+      if (isValidValue(fields()[2], other.median)) {
+        this.median = data().deepCopy(fields()[2].schema(), other.median);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.median)) {
-        this.median = data().deepCopy(fields()[3].schema(), other.median);
+      if (isValidValue(fields()[3], other.ninety)) {
+        this.ninety = data().deepCopy(fields()[3].schema(), other.ninety);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
-      if (isValidValue(fields()[4], other.ninety)) {
-        this.ninety = data().deepCopy(fields()[4].schema(), other.ninety);
+      if (isValidValue(fields()[4], other.stdDev)) {
+        this.stdDev = data().deepCopy(fields()[4].schema(), other.stdDev);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
-      if (isValidValue(fields()[5], other.stdDev)) {
-        this.stdDev = data().deepCopy(fields()[5].schema(), other.stdDev);
+      if (isValidValue(fields()[5], other.scaledValues)) {
+        this.scaledValues = data().deepCopy(fields()[5].schema(), other.scaledValues);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
     }
@@ -324,70 +324,30 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
      */
     private Builder(output.avro.FloatOutput other) {
       super(SCHEMA$);
-      if (isValidValue(fields()[0], other.scaledValues)) {
-        this.scaledValues = data().deepCopy(fields()[0].schema(), other.scaledValues);
+      if (isValidValue(fields()[0], other.min)) {
+        this.min = data().deepCopy(fields()[0].schema(), other.min);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.min)) {
-        this.min = data().deepCopy(fields()[1].schema(), other.min);
+      if (isValidValue(fields()[1], other.max)) {
+        this.max = data().deepCopy(fields()[1].schema(), other.max);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.max)) {
-        this.max = data().deepCopy(fields()[2].schema(), other.max);
+      if (isValidValue(fields()[2], other.median)) {
+        this.median = data().deepCopy(fields()[2].schema(), other.median);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.median)) {
-        this.median = data().deepCopy(fields()[3].schema(), other.median);
+      if (isValidValue(fields()[3], other.ninety)) {
+        this.ninety = data().deepCopy(fields()[3].schema(), other.ninety);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.ninety)) {
-        this.ninety = data().deepCopy(fields()[4].schema(), other.ninety);
+      if (isValidValue(fields()[4], other.stdDev)) {
+        this.stdDev = data().deepCopy(fields()[4].schema(), other.stdDev);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.stdDev)) {
-        this.stdDev = data().deepCopy(fields()[5].schema(), other.stdDev);
+      if (isValidValue(fields()[5], other.scaledValues)) {
+        this.scaledValues = data().deepCopy(fields()[5].schema(), other.scaledValues);
         fieldSetFlags()[5] = true;
       }
-    }
-
-    /**
-      * Gets the value of the 'scaledValues' field.
-      * @return The value.
-      */
-    public java.util.List<java.lang.Double> getScaledValues() {
-      return scaledValues;
-    }
-
-
-    /**
-      * Sets the value of the 'scaledValues' field.
-      * @param value The value of 'scaledValues'.
-      * @return This builder.
-      */
-    public output.avro.FloatOutput.Builder setScaledValues(java.util.List<java.lang.Double> value) {
-      validate(fields()[0], value);
-      this.scaledValues = value;
-      fieldSetFlags()[0] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'scaledValues' field has been set.
-      * @return True if the 'scaledValues' field has been set, false otherwise.
-      */
-    public boolean hasScaledValues() {
-      return fieldSetFlags()[0];
-    }
-
-
-    /**
-      * Clears the value of the 'scaledValues' field.
-      * @return This builder.
-      */
-    public output.avro.FloatOutput.Builder clearScaledValues() {
-      scaledValues = null;
-      fieldSetFlags()[0] = false;
-      return this;
     }
 
     /**
@@ -405,9 +365,9 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder setMin(double value) {
-      validate(fields()[1], value);
+      validate(fields()[0], value);
       this.min = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[0] = true;
       return this;
     }
 
@@ -416,7 +376,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'min' field has been set, false otherwise.
       */
     public boolean hasMin() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[0];
     }
 
 
@@ -425,7 +385,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder clearMin() {
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[0] = false;
       return this;
     }
 
@@ -444,9 +404,9 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder setMax(double value) {
-      validate(fields()[2], value);
+      validate(fields()[1], value);
       this.max = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[1] = true;
       return this;
     }
 
@@ -455,7 +415,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'max' field has been set, false otherwise.
       */
     public boolean hasMax() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[1];
     }
 
 
@@ -464,7 +424,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder clearMax() {
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
 
@@ -483,9 +443,9 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder setMedian(double value) {
-      validate(fields()[3], value);
+      validate(fields()[2], value);
       this.median = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -494,7 +454,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'median' field has been set, false otherwise.
       */
     public boolean hasMedian() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[2];
     }
 
 
@@ -503,7 +463,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder clearMedian() {
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -522,9 +482,9 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder setNinety(double value) {
-      validate(fields()[4], value);
+      validate(fields()[3], value);
       this.ninety = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -533,7 +493,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'ninety' field has been set, false otherwise.
       */
     public boolean hasNinety() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[3];
     }
 
 
@@ -542,7 +502,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder clearNinety() {
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -561,9 +521,9 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder setStdDev(double value) {
-      validate(fields()[5], value);
+      validate(fields()[4], value);
       this.stdDev = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -572,7 +532,7 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'stdDev' field has been set, false otherwise.
       */
     public boolean hasStdDev() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[4];
     }
 
 
@@ -581,6 +541,46 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public output.avro.FloatOutput.Builder clearStdDev() {
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'scaledValues' field.
+      * @return The value.
+      */
+    public java.util.List<java.lang.Double> getScaledValues() {
+      return scaledValues;
+    }
+
+
+    /**
+      * Sets the value of the 'scaledValues' field.
+      * @param value The value of 'scaledValues'.
+      * @return This builder.
+      */
+    public output.avro.FloatOutput.Builder setScaledValues(java.util.List<java.lang.Double> value) {
+      validate(fields()[5], value);
+      this.scaledValues = value;
+      fieldSetFlags()[5] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'scaledValues' field has been set.
+      * @return True if the 'scaledValues' field has been set, false otherwise.
+      */
+    public boolean hasScaledValues() {
+      return fieldSetFlags()[5];
+    }
+
+
+    /**
+      * Clears the value of the 'scaledValues' field.
+      * @return This builder.
+      */
+    public output.avro.FloatOutput.Builder clearScaledValues() {
+      scaledValues = null;
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -590,12 +590,12 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
     public FloatOutput build() {
       try {
         FloatOutput record = new FloatOutput();
-        record.scaledValues = fieldSetFlags()[0] ? this.scaledValues : (java.util.List<java.lang.Double>) defaultValue(fields()[0]);
-        record.min = fieldSetFlags()[1] ? this.min : (java.lang.Double) defaultValue(fields()[1]);
-        record.max = fieldSetFlags()[2] ? this.max : (java.lang.Double) defaultValue(fields()[2]);
-        record.median = fieldSetFlags()[3] ? this.median : (java.lang.Double) defaultValue(fields()[3]);
-        record.ninety = fieldSetFlags()[4] ? this.ninety : (java.lang.Double) defaultValue(fields()[4]);
-        record.stdDev = fieldSetFlags()[5] ? this.stdDev : (java.lang.Double) defaultValue(fields()[5]);
+        record.min = fieldSetFlags()[0] ? this.min : (java.lang.Double) defaultValue(fields()[0]);
+        record.max = fieldSetFlags()[1] ? this.max : (java.lang.Double) defaultValue(fields()[1]);
+        record.median = fieldSetFlags()[2] ? this.median : (java.lang.Double) defaultValue(fields()[2]);
+        record.ninety = fieldSetFlags()[3] ? this.ninety : (java.lang.Double) defaultValue(fields()[3]);
+        record.stdDev = fieldSetFlags()[4] ? this.stdDev : (java.lang.Double) defaultValue(fields()[4]);
+        record.scaledValues = fieldSetFlags()[5] ? this.scaledValues : (java.util.List<java.lang.Double>) defaultValue(fields()[5]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -628,6 +628,16 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
   @Override public void customEncode(org.apache.avro.io.Encoder out)
     throws java.io.IOException
   {
+    out.writeDouble(this.min);
+
+    out.writeDouble(this.max);
+
+    out.writeDouble(this.median);
+
+    out.writeDouble(this.ninety);
+
+    out.writeDouble(this.stdDev);
+
     long size0 = this.scaledValues.size();
     out.writeArrayStart();
     out.setItemCount(size0);
@@ -641,16 +651,6 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
     if (actualSize0 != size0)
       throw new java.util.ConcurrentModificationException("Array-size written was " + size0 + ", but element count was " + actualSize0 + ".");
 
-    out.writeDouble(this.min);
-
-    out.writeDouble(this.max);
-
-    out.writeDouble(this.median);
-
-    out.writeDouble(this.ninety);
-
-    out.writeDouble(this.stdDev);
-
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -658,6 +658,16 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
+      this.min = in.readDouble();
+
+      this.max = in.readDouble();
+
+      this.median = in.readDouble();
+
+      this.ninety = in.readDouble();
+
+      this.stdDev = in.readDouble();
+
       long size0 = in.readArrayStart();
       java.util.List<java.lang.Double> a0 = this.scaledValues;
       if (a0 == null) {
@@ -673,20 +683,30 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
         }
       }
 
-      this.min = in.readDouble();
-
-      this.max = in.readDouble();
-
-      this.median = in.readDouble();
-
-      this.ninety = in.readDouble();
-
-      this.stdDev = in.readDouble();
-
     } else {
       for (int i = 0; i < 6; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
+          this.min = in.readDouble();
+          break;
+
+        case 1:
+          this.max = in.readDouble();
+          break;
+
+        case 2:
+          this.median = in.readDouble();
+          break;
+
+        case 3:
+          this.ninety = in.readDouble();
+          break;
+
+        case 4:
+          this.stdDev = in.readDouble();
+          break;
+
+        case 5:
           long size0 = in.readArrayStart();
           java.util.List<java.lang.Double> a0 = this.scaledValues;
           if (a0 == null) {
@@ -701,26 +721,6 @@ public class FloatOutput extends org.apache.avro.specific.SpecificRecordBase imp
               a0.add(e0);
             }
           }
-          break;
-
-        case 1:
-          this.min = in.readDouble();
-          break;
-
-        case 2:
-          this.max = in.readDouble();
-          break;
-
-        case 3:
-          this.median = in.readDouble();
-          break;
-
-        case 4:
-          this.ninety = in.readDouble();
-          break;
-
-        case 5:
-          this.stdDev = in.readDouble();
           break;
 
         default:
